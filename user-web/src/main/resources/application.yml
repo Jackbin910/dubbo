@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: dubbo-auto-configuration-consumer-sample
+
+dubbo:
+  scan:
+    base-packages: com.yangbin1.user.service.impl
+  protocol:
+    name: dubbo
+    port: 12345
+  registry:
+    address: N/A
