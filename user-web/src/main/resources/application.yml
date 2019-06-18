@@ -1,3 +1,6 @@
 spring:
   application:
     name: dubbo-auto-configuration-consumer-sample
+dubbo:
+  registry:
+    address: zookeeper://127.0.0.1:2181
