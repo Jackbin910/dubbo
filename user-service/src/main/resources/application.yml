@@ -2,11 +2,11 @@ spring:
   application:
     name: dubbo-auto-configuration-provider-demo
 
-dubbo:
-  scan:
-    base-packages: com.yangbin1.user.service.impl
-  protocol:
-    name: dubbo
-    port: 12345
-  registry:
-    address: zookeeper://127.0.0.1:2181
+#dubbo:
+#  scan:
+#    base-packages: com.yangbin1.user.service.impl
+#  protocol:
+#    name: dubbo
+#    port: 12345
+#  registry:
+#    address: zookeeper://127.0.0.1:2181
