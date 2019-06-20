@@ -5,8 +5,9 @@
        http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
     <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
     <dubbo:protocol name="dubbo" port="12345"/>
+    <dubbo:protocol name="http" port="8888"/>
     <bean id="userService" class="com.yangbin1.user.service.impl.UserServiceImpl"/>
-    <dubbo:service interface="com.yangbin1.user.service.UserService" ref="userService" timeout="3000">
-        <dubbo:method name="sayHello" timeout="6000"></dubbo:method>
-    </dubbo:service>
+    <bean id="fileService" class="com.yangbin1.user.service.impl.FileServiceImpl"/>
+    <dubbo:service interface="com.yangbin1.user.service.UserService" ref="userService" timeout="3000"/>
+    <dubbo:service interface="com.yangbin1.user.service.FileService" ref="fileService" timeout="3000" protocol="http"/>
 </beans>
