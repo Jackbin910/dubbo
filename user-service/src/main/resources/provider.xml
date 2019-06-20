@@ -3,11 +3,12 @@
        xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
        http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
-    <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
+<!--    <dubbo:registry address="zookeeper://127.0.0.1:2181"/>-->
+    <dubbo:registry id="remote1" address="zookeeper://39.100.117.228:2181"/>
     <dubbo:protocol name="dubbo" port="12345"/>
     <dubbo:protocol name="http" port="8888"/>
     <bean id="userService" class="com.yangbin1.user.service.impl.UserServiceImpl"/>
     <bean id="fileService" class="com.yangbin1.user.service.impl.FileServiceImpl"/>
-    <dubbo:service interface="com.yangbin1.user.service.UserService" ref="userService" timeout="3000"/>
-    <dubbo:service interface="com.yangbin1.user.service.FileService" ref="fileService" timeout="3000" protocol="http"/>
+    <dubbo:service interface="com.yangbin1.user.service.UserService" ref="userService" timeout="3000" registry="remote1"/>
+    <dubbo:service interface="com.yangbin1.user.service.FileService" ref="fileService" timeout="3000" protocol="http" registry="remote1"/>
 </beans>
