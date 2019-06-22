@@ -5,6 +5,6 @@
        http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
    <!-- <dubbo:registry address="zookeeper://127.0.0.1:2181"/>-->
     <dubbo:registry id="remote1" address="zookeeper://39.100.117.228:2181"/>
-    <dubbo:reference id="userService" check="false" interface="com.yangbin1.user.service.UserService" retries="4" registry="remote1"/>
+    <dubbo:reference group="user1" id="userService" check="false" interface="com.yangbin1.user.service.UserService" retries="4" registry="remote1"/>
     <dubbo:reference id="fileService" check="false" interface="com.yangbin1.user.service.FileService" registry="remote1"/>
 </beans>
